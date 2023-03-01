@@ -1,0 +1,110 @@
+﻿<Window x:Class="Cronika.View.EditRecordDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cronika.View"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Height="450" Width="450"
+		WindowStyle="None"
+        AllowsTransparency="True"
+		FontFamily="Calibri">
+	<Grid>
+		<Grid Background="#FF151515">
+			<Rectangle Width="50" Height="50" Fill="#FF464646" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+			<Rectangle Width="50" Height="50" Fill="#FF464646" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+			<Rectangle Width="50" Height="50" Fill="#FF464646" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+			<Rectangle Width="50" Height="50" Fill="#FF464646" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+			<Grid Margin="10" Background="#FF1D1D1D">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition Height="45"/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition Height="50"/>
+				</Grid.RowDefinitions>
+
+				<Grid>
+					<TextBlock Text="Type:" Foreground="Silver" FontSize="14"
+						   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0"/>
+					<ComboBox Name="typeComboBox" Width="200" Height="25" HorizontalAlignment="Right"
+						  VerticalAlignment="Center" Margin="20,0" IsEnabled="False"
+						  Loaded="typeComboBox_Loaded">
+						<ComboBoxItem Content="Game"/>
+						<ComboBoxItem Content="Movie"/>
+						<ComboBoxItem Content="TV-Serial"/>
+						<ComboBoxItem Content="Book"/>
+					</ComboBox>
+				</Grid>
+				<Grid Grid.Row="1">
+					<TextBlock Text="Name:" Foreground="Silver" FontSize="14" 
+						   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0"/>
+					<TextBox Name="nameTextBox" Width="200" Height="25" HorizontalAlignment="Right"
+						 VerticalAlignment="Center" Margin="20,0" MaxLength="50"/>
+				</Grid>
+				<Grid Grid.Row="2">
+					<TextBlock Text="Rating:" Foreground="Silver" FontSize="14" 
+						   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0"/>
+					<ComboBox Name="ratingComboBox" Width="200" Height="25" HorizontalAlignment="Right"
+						  VerticalAlignment="Center" Margin="20,0" SelectedIndex="0"/>
+				</Grid>
+				<Grid Grid.Row="3">
+					<TextBlock Text="Genre:" Foreground="Silver" FontSize="14"
+						   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0"/>
+					<ComboBox Name="genreComboBox" Width="200" Height="25" HorizontalAlignment="Right"
+						  VerticalAlignment="Center" Margin="20,0" SelectedIndex="0"/>
+				</Grid>
+				<Grid Grid.Row="4">
+					<TextBlock Text="Image:" Foreground="Silver" FontSize="14" 
+						   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0"/>
+					<Button Content="Browse..." Width="60" Height="20" HorizontalAlignment="Right"
+							VerticalAlignment="Top" Click="ImageButton_Click" Margin="20,0"/>
+					<TextBlock Name="imageUri" Foreground="DarkGray" FontSize="11" Margin="20,0"
+							   HorizontalAlignment="Left" VerticalAlignment="Bottom" TextWrapping="Wrap"/>
+
+				</Grid>
+				<Grid Grid.Row="5">
+					<TextBlock Text="Cinema type:" Foreground="Silver" FontSize="14" 
+						   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0"/>
+					<ComboBox Name="cinemaTypeComboBox" Width="200" Height="25" HorizontalAlignment="Right"
+						  VerticalAlignment="Center" Margin="20,0" SelectedIndex="0">
+						<ComboBoxItem Content="Cartoon"/>
+						<ComboBoxItem Content="Anime"/>
+						<ComboBoxItem Content="Serial"/>
+					</ComboBox>
+				</Grid>
+				<Grid Grid.Row="6">
+					<TextBlock Text="Game length:" Foreground="Silver" FontSize="14" 
+						   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0"/>
+					<TextBox Name="gameLengthTextBox" Width="200" Height="25" HorizontalAlignment="Right" MaxLength="7"
+						  VerticalAlignment="Center" Margin="20,0" PreviewTextInput="TextBox_PreviewTextInput"/>
+				</Grid>
+				<Grid Grid.Row="7">
+					<TextBlock Text="Number of pages:" Foreground="Silver" FontSize="14" 
+						   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0"/>
+					<TextBox Name="numberOfPagesTextBox" Width="200" Height="25" HorizontalAlignment="Right"
+						  VerticalAlignment="Center" Margin="20,0" PreviewTextInput="TextBox_PreviewTextInput" MaxLength="7"/>
+				</Grid>
+				<Grid Grid.Row="8">
+					<TextBlock Text="Author:" Foreground="Silver" FontSize="14" 
+						   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0"/>
+					<TextBox Name="authorTextBox" Width="200" Height="25" HorizontalAlignment="Right"
+						  VerticalAlignment="Center" Margin="20,0" MaxLength="50"/>
+				</Grid>
+
+				<Grid Grid.Row="9" Margin="50,0">
+					<Button Style="{StaticResource DarkButton}" Content="Save" Width="100" Height="30"
+						HorizontalAlignment="Left" Click="SaveButton_Click"/>
+					<Button Style="{StaticResource DarkButton}" Content="Cancel" Width="100" Height="30"
+						HorizontalAlignment="Right" Click="CancelButton_Click"/>
+				</Grid>
+			</Grid>
+		</Grid>
+	</Grid>
+</Window>
